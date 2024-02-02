@@ -1,0 +1,1 @@
+Bazı derslerde kullanılan kodlar.
