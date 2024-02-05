@@ -1,5 +1,5 @@
 
-# Yapay Sinir Aglari dersi ornek perceptron kodu
+# Yapay Sinir Aglari dersi ornek algilayici (perceptron) kodu
 # Ornek üzerinden gosterilecekler:
 # Veri sayisinin YSA agini egitme sureci
 # Test verisinin, egitim verisinden az alindiginda ortaya cikabilecek durumlar
