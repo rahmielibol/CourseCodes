@@ -193,7 +193,7 @@ class Perceptron:
         
 	
 
-#
+
 	def main(egitim_verisi_sayisi,test_verisi_sayisi):
 		egitim_Verisi = Perceptron.veri_Uretimi(egitim_verisi_sayisi)
 		ysa = Perceptron()
@@ -205,6 +205,6 @@ class Perceptron:
 
         
         
-#if __name__ == '__main__':
+
 Perceptron.main(egitim_verisi,test_verisi)
 print('Bitti...')
