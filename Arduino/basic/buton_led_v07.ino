@@ -1,11 +1,11 @@
 
 int Buton = 7;
-int Led = 8;
+int Led = 13;
 
 /*
 Alternatif olarak kullanilabilir.
 #define Buton 8
-#define Led 10
+#define Led 13
   */
 
 int buton_durumu = 0;
@@ -14,7 +14,6 @@ void setup() {
 
   pinMode(Buton, INPUT);
   pinMode(Led, OUTPUT);
-
 
 }
 
