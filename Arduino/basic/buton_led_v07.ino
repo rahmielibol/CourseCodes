@@ -1,31 +1,25 @@
-
 int Buton = 7;
 int Led = 13;
 
+
+
 /*
 Alternatif olarak kullanilabilir.
-#define Buton 8
+#define Buton 7
 #define Led 13
   */
 
-int buton_durumu = 0;
+
+
+int okunan_deger = 0;
 
 void setup() {
-
-  pinMode(Buton, INPUT);
-  pinMode(Led, OUTPUT);
-
+  pinMode(Led, OUTPUT);  // sets the digital pin 13 as output
+  pinMode(Buton, INPUT);    // sets the digital pin 7 as input
 }
 
 void loop() {
-
-  buton_durumu = digitalRead(Buton);
-
-  if(buton_durumu == 1) { 
-  digitalWrite(Led,HIGH);
-  //delay(1000)  //Butona basip bıraktiktan sonra bir süre daha yanmasi için zaman eklenebilir.
-  }
-  digitalWrite(Led,LOW);
-
-
+  okunan_deger = digitalRead(Buton);
+  digitalWrite(Led, okunan_deger);  
+ delay(10);
 }
