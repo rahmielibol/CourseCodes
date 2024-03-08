@@ -12,10 +12,10 @@ cikis_Pini_Belirle(13);
 void loop() {
   // put your main code here, to run repeatedly:
 
-led_Yak(13);
-delay(bekleme_zamani);
-led_Sondur(13);
-delay(bekleme_zamani);
+  led_Yak(13);
+  delay(bekleme_zamani);
+  led_Sondur(13);
+  delay(bekleme_zamani);
 }
 
 
