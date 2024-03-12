@@ -1,4 +1,9 @@
-#include <DHT.h>
+/*
+Sicaklik ve nem sensoru kullanimi
+*/
+
+
+#include <DHT.h>     // DHT sicaklik ve nem sensoru kutuphanesi
 
 #define dhtPini 2
 #define dhtTipi DHT11
