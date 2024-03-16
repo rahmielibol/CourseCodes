@@ -20,6 +20,9 @@ long son_Lamba_Degisimi = 0;
 int role_Durumu = LOW;
 
 void setup() {
+  // put your setup code here, to run once:
+  
+  
   pinMode(ses_Sensoru_Pini, INPUT);
   pinMode(cikis_Pini, OUTPUT);
 
@@ -28,6 +31,8 @@ void setup() {
 }
 
 void loop() {
+  // put your main code here, to run repeatedly:
+  
   ses_Degeri = digitalRead(ses_Sensoru_Pini);
   cari_Gurultu_Zamani = millis();
 
