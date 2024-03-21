@@ -37,5 +37,5 @@ int mesafe_olcumu() {
   yanki_suresi = pulseIn(yankiPini, HIGH);
   hesaplanan_mesafe = (yanki_suresi/2) * 0.0343;    // (Sesin karsidaki nesneye gidip donme suresi / 2 ) * ses hizi (343 m/s = 0.0343 cm/us)
   delay(300);
-  return(hesaplanan_mesafe);
+  return(constrain(hesaplanan_mesafe,0,200));   //Sensor 200cm araliginda sonuc verir. Daha yuksek degerleri bu alana aldık.
 }
