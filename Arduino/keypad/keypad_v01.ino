@@ -3,6 +3,7 @@
 const byte ROWS = 4; 
 const byte COLS = 4; 
 char bellek_sifre = 5;
+int incomingByte = 0; // for incoming serial data
 
 char hexaKeys[ROWS][COLS] = {
   {'1', '2', '3', 'A'},
@@ -20,16 +21,22 @@ void setup(){
   Serial.begin(9600);
   pinMode(13,OUTPUT);
 }
-void loop(){
-    char customKey = customKeypad.getKey();
-    digitalWrite(13,0);
-    if (customKey == 50){
-      Serial.println(customKey);
-      digitalWrite(13,1);
-      delay(300);
-    }
-    else {
-    digitalWrite(13,0);
-    }
   
+void loop(){
+  digitalWrite(13,0);
+  if (Serial.available() > 0) {
+    incomingByte = Serial.read();
+    Serial.print("I received: ");
+    Serial.println(incomingByte, DEC);
+  }
+
+  char customKey = customKeypad.getKey();
+  if (customKey == 50) {
+    Serial.println(customKey);
+    digitalWrite(13,1);
+    delay(300);
+  }
+  else {
+  digitalWrite(13,0);
+  }
 }
