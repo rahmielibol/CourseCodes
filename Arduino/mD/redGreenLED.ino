@@ -1,12 +1,12 @@
  
 
-#include <SoftwareSerial.h>         // Yazılımsal Seri Port kütüphanesi
- 
-const int RX = 4;                         // Yazılımsal Seri Port'un RX pini
-const int TX = 5;                         // Yazılımsal Seri Port'un TX pini
-                  // Arduino'nun dahili LED'i
- 
-SoftwareSerial bluetooth(RX,TX);    // Kütüphanemizi ayarlıyoruz
+#include <SoftwareSerial.h>         
+
+const int RX = 4;                         
+const int TX = 5;                        
+                 
+
+SoftwareSerial bluetooth(RX,TX);   
  
 void setup() {
   pinMode(2, OUTPUT);
