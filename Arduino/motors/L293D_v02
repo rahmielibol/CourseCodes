@@ -1,0 +1,80 @@
+/*
+L293D motor sürücü (H bridge) ile iki DA motor kontrolu
+*/
+
+
+int motorKontrolPin[] = {5,11};
+int motorPin[] = {6,7,9,10};
+
+void setup()
+{
+  for (int i = 0; i < 2; i++) {pinMode(motorKontrolPin[i], OUTPUT);}
+  for (int i = 0; i < 4; i++) {pinMode(motorPin[i], OUTPUT);}
+}
+
+void loop()
+{
+ ileri(100,1000);
+ 
+  //ileri(200,2000);
+  //for (int i = 0; i<=255; i++) {ileri(i,100);}
+  
+  dur(2000);
+  
+  geri(50,1000);
+  dur(2000);
+  
+  sagadon(50,2000);
+  dur(2000);
+
+  soladon(50,2000);
+  dur(2000);
+
+
+
+}
+
+int ileri(int hiz, int deltaT) {
+  for (int i=0; i<2; i++) {analogWrite(motorKontrolPin[i],hiz);}
+  digitalWrite(motorPin[0],HIGH);
+  digitalWrite(motorPin[1],LOW);
+  digitalWrite(motorPin[2],HIGH);
+  digitalWrite(motorPin[3],LOW);
+  delay(deltaT);
+}
+
+int dur(int deltaT) {
+  for (int i=0; i<2; i++) {analogWrite(motorKontrolPin[i],0);}
+  for (int i=0; i<4; i++) {digitalWrite(motorPin[i],LOW);}
+  delay(deltaT);
+}
+
+int geri(int hiz, int deltaT) {
+  for (int i=0; i<2; i++) {analogWrite(motorKontrolPin[i],hiz);}
+  digitalWrite(motorPin[0],LOW);
+  digitalWrite(motorPin[1],HIGH);
+  digitalWrite(motorPin[2],LOW);
+  digitalWrite(motorPin[3],HIGH);
+  delay(deltaT);
+}
+
+
+void sagadon(int hiz, int deltaT) {
+  for (int i=0; i<2; i++) {analogWrite(motorKontrolPin[i],hiz);}
+  digitalWrite(motorPin[0],HIGH);
+  digitalWrite(motorPin[1],LOW);
+  digitalWrite(motorPin[2],LOW);
+  digitalWrite(motorPin[3],HIGH);
+  delay(deltaT);
+}
+
+
+
+void soladon(int hiz, int deltaT) {
+  for (int i=0; i<2; i++) {analogWrite(motorKontrolPin[i],hiz);}
+  digitalWrite(motorPin[0],LOW);
+  digitalWrite(motorPin[1],HIGH);
+  digitalWrite(motorPin[2],HIGH);
+  digitalWrite(motorPin[3],LOW);
+  delay(deltaT);
+}
