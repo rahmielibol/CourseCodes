@@ -1,5 +1,4 @@
 
-
 #include <SoftwareSerial.h>
 
 const int RX = 4;
@@ -9,19 +8,15 @@ SoftwareSerial bluetooth(RX, TX);
 
 #include <DHT.h>
 
-#define DHTPIN 2       // DHT11 veri pini
-#define DHTTYPE DHT11  // DHT11 sensör tipi
+#define DHTPIN 2       
+#define DHTTYPE DHT11  
 
 DHT dht(DHTPIN, DHTTYPE);
 
-
-
-
-
 void setup() {
 
-  pinMode(9, OUTPUT);
-  pinMode(11, OUTPUT);
+  pinMode(9, OUTPUT);     // Red Led
+  pinMode(11, OUTPUT);    // Green Led
   bluetooth.begin(9600);
 
   Serial.begin(9600);
@@ -52,7 +47,7 @@ void loop() {
         bluetooth.println("Sensor Error");
         return;
       }
-      String data = "Sıcaklık: " + String(temp) + " C\n" + "Nem: " + String(hum) + " %";
+      String data = "Temperature: " + String(temp) + " C\n" + "Humidity: " + String(hum) + " %";
       bluetooth.print(String(temp));
       Serial.println(data);
       delay(100);
@@ -66,7 +61,7 @@ void loop() {
         bluetooth.println("Sensor Error");
         return;
       }
-      String data = "Sıcaklık: " + String(temp) + " C\n" + "Nem: " + String(hum) + " %";
+      String data = "Temperature: " + String(temp) + " C\n" + "Humidity: " + String(hum) + " %";
       bluetooth.print(String(hum));
       Serial.println(data);
       delay(100);
